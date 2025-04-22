@@ -1,0 +1,198 @@
+/* index.css */
+
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Centralized Theme Variables */
+:root {
+  --body-bg-color: #e3e3e3;
+  --text-color: #333;
+  --primary-color: #007bff;
+  --primary-color-hover: #0056b3;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --success-color-hover: #218838;
+  --danger-color: #dc3545;
+  --danger-color-hover: #c82333;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --info-color-hover: #117a8b;
+  --light-gray: #f8f9fa;
+  --gray: #e9ecef;
+  --dark-gray: #343a40;
+  --white: #fff;
+  --border-color: #ced4da;
+  
+  /* Additional Variables for Dashboards */
+  --dashboard-bg-color: #f3f4f6;       /* For teacher dashboard background */
+  --secondary-accent-color: #d500ed;     /* Accent for specific buttons */
+}
+
+:root.theme-dark {
+  --body-bg-color: #1e1e1e;
+  --text-color: #f4f4f4;
+  --primary-color: #0d6efd;
+  --primary-color-hover: #0b5ed7;
+  --secondary-color: #adb5bd;
+  --success-color: #198754;
+  --success-color-hover: #157347;
+  --danger-color: #dc3545;
+  --danger-color-hover: #bb2d3b;
+  --warning-color: #ffc107;
+  --info-color: #0dcaf0;
+  --info-color-hover: #31d2f2;
+  --light-gray: #7a7878;
+  --gray-200:#808080;
+  --gray: #3a3a3a;
+  --dark-gray: #121212;
+  --white: #f8f9fa;
+  --border-color: #6e6e6e;
+  
+  /* Additional Variables for Dashboards */
+  --dashboard-bg-color: #292b2c;
+  --secondary-accent-color: #6f42c1;
+}
+
+
+/* Base Styles */
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--body-bg-color);
+  color: var(--text-color);
+  font-family: 'Poppins',Arial, sans-serif;
+  min-height: 100vh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+  .card {
+  background: var(--light-gray);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+
+ .btn-bg2 {
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+  padding: 0.75rem;
+  background-color: var(--secondary-accent-color);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+ .btn-bg2:hover {
+  background-color: #ba20cb;
+}
+
+/* src/styles/AdminDashboard.css */
+.admin-dashboard {
+  padding: 20px;
+  background-color: var(--dashboard-bg-color);
+  min-height: 100vh;
+}
+
+.admin-dashboard .input-field{
+  margin-bottom: 0.7rem;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  background-color: var(--white);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.tab-button.active {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.input-field {
+  width: 100%;
+  max-width: 20rem;
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+.submit-button,
+.remove-button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.submit-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.submit-button:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.remove-button {
+  background-color: var(--danger-color);
+  color: var(--white);
+}
+
+.remove-button:hover {
+  background-color: var(--danger-color-hover);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid var(--border-color);
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
