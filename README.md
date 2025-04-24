@@ -36,14 +36,8 @@ This is a web-based attendance management system that uses **facial recognition 
 
 ---
 
-<details>
-<summary>▶️ Click to Preview</summary>
-
-<p align="center">
   <a href="https://res.cloudinary.com/denezzat5/video/upload/v1745470638/OTHER/bdhoqdktqjqnwepzncaf.mp4" target="_blank">
    ▶️ Watch Video demo 
   </a>
-</p>
 
-</details>
 
