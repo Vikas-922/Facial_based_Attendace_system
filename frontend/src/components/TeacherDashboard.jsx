@@ -237,10 +237,7 @@ export default function TeacherDashboard() {
   });
 
   const handleFetchAttendance = async () => {
-    if (!viewFilters.course || !viewFilters.class_year || !viewFilters.division || !viewFilters.subject_id) {
-      toast.error("Please select Course, Class Year, Division, and Subject");
-      return;
-    }
+    
     try {
       const data = await fetchAttendanceViewAPI(viewFilters);
       if (data.error) {
@@ -252,6 +249,15 @@ export default function TeacherDashboard() {
     } catch (error) {
       toast.error("Network error");
     }
+  };
+
+  const handleOnSubmit = async () => {
+    if (!viewFilters.course || !viewFilters.class_year || !viewFilters.division || !viewFilters.subject_id) {
+      toast.error("Please select Course, Class Year, Division, and Subject");
+      return;
+    }
+    handleFetchAttendance();
+    handleCheckAttendanceStatus();
   };
 
   const handleStatusToggle = (index) => {
@@ -489,17 +495,26 @@ const handleToggleAttendanceStatus = async () => {
             />
 
           </div>
-            <button onClick={handleFetchAttendance} className="submit-button">
+
+          <div className='btns-cont'>
+            <button onClick={handleOnSubmit} className="submit-button m-0">
               Fetch Attendance
-            </button>
-            <div className="status-buttons" style={{ display: 'inline-block', marginLeft: '10px' }}>
-            <button onClick={handleCheckAttendanceStatus} className="btn-bg2">
-                Check Status
-            </button>
-            {show && (<button onClick={handleToggleAttendanceStatus} className="submit-button" style={{ backgroundColor: attendanceEnabled ? 'red' : 'green' }}>
-                {attendanceEnabled ? "Disable Attendance" : "Enable Attendance"}
-            </button>)}
-            </div>
+            </button>            
+              {show && (
+                <div className="status-buttons" >
+                  <span>Self Attendance</span>
+                  <label className="switch">
+                    <input
+                      type="checkbox"
+                      checked={attendanceEnabled}
+                      onChange={handleToggleAttendanceStatus}
+                      />
+                    <span className="slider"></span>
+                  </label>
+                </div>
+              )}
+          </div>
+
           {studentList.length > 0 && (
             <div className="attendance-table">
               <table>

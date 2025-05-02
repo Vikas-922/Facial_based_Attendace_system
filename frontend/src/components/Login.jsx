@@ -8,7 +8,7 @@ import '../styles/Login.css';
 export default function Login() {
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('teacher'); // teacher, student, admin
+  // const [role, setRole] = useState('teacher'); // teacher, student, admin
   const navigate = useNavigate();
 
   const handleLogin = async () => {
@@ -38,18 +38,6 @@ export default function Login() {
     <div className="login-container">
       <div className="login-box">
         <h2 className="login-title">Login</h2>
-        <div className="login-field">
-          <label className="login-label">Role</label>
-          <select
-            value={role}
-            onChange={(e) => setRole(e.target.value)}
-            className="login-select"
-          >
-            <option value="teacher">Teacher</option>
-            <option value="student">Student</option>
-            <option value="admin">Admin</option>
-          </select>
-        </div>
         <div className="login-field">
           <label className="login-label">User ID</label>
           <input
